@@ -1,8 +1,3 @@
-
-/*
- * File: 0-putchar.c
- * Auth: emma
- */
 #include "main.h"
 /**
  * main - This code prints _putchar
