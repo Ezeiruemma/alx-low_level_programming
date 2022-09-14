@@ -3,7 +3,7 @@
  * print_alphabet_x10 - This code writes a functionn
  * 	that prints 10 times the 
  *	alphabet in lowercase
- *	Return: 0 on success  
+ *Return: 0 on success  
  */
 void print_alphabet_x10(void)
 {
@@ -14,7 +14,7 @@ void print_alphabet_x10(void)
 	{
 		for(c = 'a'; c <= 'z'; c++)
 		{
-			_purchar(c);
+			_putchar(c);
 		}
 		_putchar('\n');
 	}
