@@ -1,24 +1,30 @@
 #include "main.h"
 /**
- *_strcmp - compares two strings
- *@s1: A pointer to a character that will be changed
- *@s2: A pointer to a character that will also be changed/modified/updated
+ *_strncpy - copies a string
+ *@dest: A pointer to a character that will be changed
+ *@src: A pointer to a character that will be changed
+ *@n: value
  *Return: dest
  */
 
-int _strcmp(char *s1, char *s2)
+char *_strncpy(char *dest, char *src, int n)
 
 {
+int i;
 
-char *str_one = s1;
-char *str_two = s2;
-
-
-while (*str_one != '\0' && *str_two != '\0' && *str_one == *str_two)
+i = 0;
+while (i < n && src[i] != '\0')
 {
-str_one++;
-str_two++;
+dest[i] = src[i];
+i++;
 }
 
-return (*str_one - *str_two);
+while (i < n)
+{
+dest[i] = '\0';
+i++;
+}
+
+return (dest);
+
 }
