@@ -10,14 +10,21 @@
  */
 int main(int argc, char *argv[])
 {
-int a, b;
-if (argc == 3)
+int i;
+int a, b, mul;
+for (argc <= 2)
 {
-a = atoi(argv[1]);
-b = atoi(argv[2]);
-printf("%d\n", a *b);
-return (0);
-}
-printf("Error\n");
+printf("Error");
 return (1);
 }
+else if (argc == 3)
+{
+for (i = 1, i < argc; i++)
+a = atoi(argv[1]);
+b = atoi(argv[2]);
+mul = a *b;
+printf("%d\n", mul);
+return (0);
+}
+}
+
