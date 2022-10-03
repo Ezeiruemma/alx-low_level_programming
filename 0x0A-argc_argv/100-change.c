@@ -1,28 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+
 /**
- * main - main funct
- * @argc: param count
- * @argv: param poiter
- * Return: int
- */
+  * main - prints the minimum number of coins to make change.
+  * @argc: argument counter.
+  * @argv: argument vector.
+  * Return: return 1 if error, else return 0.
+  */
 int main(int argc, char *argv[])
 {
-	int i, j, sum = 0;
+	int change, num;
 
-	for (i = 1; i < argc; i++)
+	change = 0;
+
+	if (argc == 2)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		num = atoi(argv[1]);
+		if (num > 0)
 		{
-			if (!isdigit(argv[i][j]))
+			for (; num >= 25; change++)
 			{
-				printf("Error\n");
-				return (1);
+				num = num - 25;
+			}
+			for (; num >= 10; change++)
+			{
+				num = num - 10;
+			}
+			for (; num >= 5; change++)
+			{
+				num = num - 5;
+			}
+			for (; num >= 2; change++)
+			{
+				num = num - 2;
+			}
+			for (; num >= 1; change++)
+			{
+				num = num - 1;
 			}
 		}
-		sum += atoi(argv[i]);
+		printf("%d\n", change);
+		return (0);
 	}
-	printf("%d\n", sum);
-	return (0);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
 }
